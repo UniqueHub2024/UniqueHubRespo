@@ -6,8 +6,8 @@ HOST='185.61.137.171';
 USER='daddyjoh_matthewhysteria';
 PASS='daddyjoh_matthewhysteria';
 DBNAME='daddyjoh_matthewhysteria';
-PORT_TCP='1194';
-PORT_UDP='110';
+PORT_TCP='110';
+PORT_UDP='1194';
 PORT_SSL='443';
 API_LINK='https://www.matthew-vpn.xyz/api/authentication/premium';
 API_KEY='DexterEskalarte';
@@ -98,7 +98,7 @@ echo "deb http://ftp.debian.org/debian/ jessie main contrib non-free
     rm squid.conf
     echo "acl YModified dst `curl -s https://api.ipify.org`" >> squid.conf
     echo 'http_port 8080
-http_port 8181
+http_port 8000
 visible_hostname Proxy
 acl PURGE method PURGE
 acl HEAD method HEAD
@@ -577,15 +577,15 @@ accept = PORT_SSL
 
 [openvpn-udp]
 connect = PORT_UDP
-accept = 444
+accept = 443
 
 [ssh]
 connect = 22
-accept = 445
+accept = 143
 
 [dropbear]
 connect = 442
-accept = 446
+accept = 1195
 
 " >> stunnel.conf
 
